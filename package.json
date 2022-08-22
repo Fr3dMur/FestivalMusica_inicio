@@ -11,5 +11,8 @@
     "Gulp"
   ],
   "author": "Freddy Murillo",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.5"
+  }
 }
