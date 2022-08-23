@@ -4,4 +4,4 @@ function tarea(done){
     done();
 }
 
-exports.tarea = tarea();
+exports.tarea = tarea;
