@@ -10,7 +10,7 @@ function css(done) {
     /*Podemos colocar .pipe() delante de otro .pipe()
     y se ejucataran uno detras del otro */ 
     
-    src("src/scss/app.scss")// Debemos identificar el archivo de SASS
+    src("src/scss/**/*.scss")// Debemos identificar el archivo de SASS
     .pipe(sass())// Como segundo paso debemos Compilarlo 
     .pipe(dest("build/css")); // Ultimo paso es Almacenarla en el disco duro
     
@@ -18,7 +18,7 @@ function css(done) {
 }
 
 function dev(done) {
-    watch("src/scss/app.scss", css);
+    watch("src/scss/**/*.scss", css);
 
     done();
 };
