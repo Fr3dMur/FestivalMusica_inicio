@@ -1,9 +1,7 @@
-// Variables Generales
-$color_principal: #25e;
+// Esta es la sintaxis anterior utilizada para llamar archivos de sass
+// @import 'base/variables';
+// @import 'contenido/contenido';
 
-body {
-    background-color: $color_principal;
-}
-
-
+@use 'base';
+@use 'contenido';
 

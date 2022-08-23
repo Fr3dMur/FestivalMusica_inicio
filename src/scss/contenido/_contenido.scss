@@ -1,0 +1,9 @@
+@use "../base/index" as v;
+
+body {
+    background-color: v.$color_principal;
+}
+
+h1 {
+    color: v.$color_secundario;
+}
