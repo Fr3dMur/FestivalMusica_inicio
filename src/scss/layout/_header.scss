@@ -1,0 +1,12 @@
+@use '../base/index' as v;
+
+.header{
+    background-color: v.$verde;
+}
+
+@media (min-width: 720px ) {
+    .contenedor{
+        display: flex;
+        justify-content: space-between;
+    }
+}
