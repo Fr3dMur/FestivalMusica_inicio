@@ -1,0 +1,24 @@
+@use '../base/variables' as v;
+@use '../base/mixies' as m;
+
+.sobre-festival{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding: 2rem;
+};
+
+.contenido-festival{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    .fecha{
+        color: v.$rosa;
+    }
+};
