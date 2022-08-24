@@ -2,23 +2,32 @@
 @use '../base/mixies' as m;
 
 .sobre-festival{
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
     padding: 2rem;
+    max-width: 100%;
+    @include m.laptop{
+        @include m.grid(2)
+    }
 };
 
 .contenido-festival{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    h2{
-        font-size: 4rem;
+    margin-top: 2rem;
+    @include m.laptop{
         margin: 0;
+    }
+    h2{
+        font-size: 3.4rem;
+        @include m.tablet{
+            font-size: 4rem;
+        }
+        margin: 0;
+        border-bottom: v.$rosa solid .5rem;
     }
 
     .fecha{
         color: v.$rosa;
+        font-weight: 700;
     }
 };
