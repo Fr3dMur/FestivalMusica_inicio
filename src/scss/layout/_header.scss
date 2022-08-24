@@ -2,11 +2,52 @@
 
 .header{
     background-color: v.$verde;
+    padding: 3rem;
+    
+    h1{
+        color: v.$blanco;
+    }
+
+}
+
+.navegacion-principal{
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+    .navegacion__enlace{
+        font-weight: bold;
+        color: v.$blanco;
+        font-size: 2rem;
+        
+        &:hover{
+            text-decoration: underline;
+            color: v.$amarillo;
+        }
+    } 
+    
+}
+
+@media (min-width: 480px) {
+    .navegacion-principal{
+        display: flex;
+        justify-content: end;
+    }
+    .navegacion__enlace{
+        margin: 0 2rem 0 0;
+        &:last-of-type{
+            margin: 0 0 0 0;
+        }
+    }
 }
 
 @media (min-width: 720px ) {
     .contenedor{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__titulo{
+        margin: 0 0 0 0;
     }
 }
