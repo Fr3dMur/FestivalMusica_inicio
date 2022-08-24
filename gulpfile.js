@@ -3,7 +3,7 @@ const {src, dest, watch} = require("gulp");
 // src, sirve para determinar la ruta de un archivo
 // dest, es una funcion que la empleamos para almacenar algo en una carpeta de estilo
 const sass = require("gulp-sass")(require('sass'));
-
+const plumber = require("gulp-plumber");
 
 function css(done) {
     
@@ -11,6 +11,7 @@ function css(done) {
     y se ejucataran uno detras del otro */ 
     
     src("src/scss/**/*.scss")// Debemos identificar el archivo de SASS
+    .pipe(plumber()) //evita que se pare la ejecucion de la compilacion
     .pipe(sass())// Como segundo paso debemos Compilarlo 
     .pipe(dest("build/css")); // Ultimo paso es Almacenarla en el disco duro
     
