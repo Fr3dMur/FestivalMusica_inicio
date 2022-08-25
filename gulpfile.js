@@ -6,6 +6,12 @@ const {src, dest, watch, parallel} = require("gulp");
 // SCSS & CSS
 const sass = require("gulp-sass")(require('sass'));
 const plumber = require("gulp-plumber");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const postcss = require("gulp-postcss");
+const sourcemaps = require("gulp-sourcemaps");
+
+
 
 // IMAGENES;
 const cache = require("gulp-cache");
@@ -21,8 +27,11 @@ function css(done) {
     y se ejucataran uno detras del otro */ 
     
     src("src/scss/**/*.scss")// Debemos identificar el archivo de SASS
+    .pipe(sourcemaps.init())
     .pipe(plumber()) //evita que se pare la ejecucion de la compilacion
     .pipe(sass())// Como segundo paso debemos Compilarlo 
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write('.'))
     .pipe(dest("build/css")); // Ultimo paso es Almacenarla en el disco duro
     
     done(); // Es un callback que avisa a gulp cuando llegamos al final
