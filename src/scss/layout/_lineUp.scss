@@ -24,18 +24,19 @@
     
   
 
-    .bg-amarillo{
-        background-color: v.$amarillo;
-        li:nth-child(odd) {
-            background-color: darken(v.$amarillo, 15%);
-        }
+}
+
+.bg-amarillo{
+    background-color: v.$amarillo;
+    li:nth-child(odd) {
+        background-color: darken(v.$amarillo, 15%);
     }
-    
-    .bg-verde{
-        background-color: v.$verde;
-        li:nth-child(odd) {
-            background-color: darken(v.$verde, 10%);
-        }
+}
+
+.bg-verde{
+    background-color: v.$verde;
+    li:nth-child(odd) {
+        background-color: darken(v.$verde, 10%);
     }
 }
 

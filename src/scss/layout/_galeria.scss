@@ -46,7 +46,9 @@
     }
 }
 
-.btn-cerrar{
+
+
+.btn-cerrar{  
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -55,6 +57,7 @@
     font-weight: 700;
     display: grid;
     place-items: center;
+    
     
     &:hover{
         cursor: pointer;
