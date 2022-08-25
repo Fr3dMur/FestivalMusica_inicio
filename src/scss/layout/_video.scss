@@ -1,0 +1,55 @@
+@use '../base/mixies' as m;
+@use '../base/variables' as v;
+
+.video{
+    position: relative;
+    max-height: 70rem;
+    min-height: 50rem;
+    overflow: hidden;
+    border: none;
+    
+
+    .overlay{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgb(166,1,199);
+        background: linear-gradient(
+            90deg, rgba(166,1,199,0.5049370089832808) 0%,
+                   rgba(255,0,130,0.2976540958180147) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contenido-video{
+        z-index: 10;
+        h2{
+            color: v.$blanco;
+            font-size: 5rem;
+            margin: 0;
+            @include m.tablet  {
+                font-size: 7rem;
+            }
+        }
+        
+        p{
+            color: v.$blanco;
+            background-color: v.$rosa;
+            display: inline-block;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            margin: 0;
+        }
+    }
+
+    video{
+        @include m.tablet  {
+            max-width: 100%;
+        }
+        display: block;
+    }
+   
+
+}
