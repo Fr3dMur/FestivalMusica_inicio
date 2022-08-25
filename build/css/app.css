@@ -361,6 +361,10 @@ img {
   height: auto;
 }
 
+ul {
+  list-style: none;
+}
+
 .header {
   background-color: #4cb8b3;
   padding: 3rem;
@@ -495,4 +499,18 @@ img {
 .contenido-festival .fecha {
   color: #f53756;
   font-weight: 700;
+}
+
+.lineUp {
+  text-align: center;
+  background-color: #f53756;
+  padding: 2rem 0 2rem 0;
+}
+.lineUp h3 {
+  margin: 0;
+}
+.lineUp .escenarios-contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
 }

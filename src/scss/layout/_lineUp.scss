@@ -1,0 +1,17 @@
+@use '../base/variables' as v;
+@use '../base/mixies' as m;
+
+.lineUp{
+   text-align: center;
+   background-color: v.$rosa;
+   padding: 2rem 0 2rem 0;
+
+   h3{
+    margin: 0;
+   }
+
+    .escenarios-contenedor{
+        @include m.grid(2);
+    }
+}
+
