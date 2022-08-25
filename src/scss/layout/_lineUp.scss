@@ -2,16 +2,84 @@
 @use '../base/mixies' as m;
 
 .lineUp{
-   text-align: center;
-   background-color: v.$rosa;
-   padding: 2rem 0 2rem 0;
-
-   h3{
-    margin: 0;
+    background-color: v.$rosa;
+    padding: 5rem 0;
+    
+    h3,p{
+        color: v.$blanco;
+        text-align: center;
    }
 
-    .escenarios-contenedor{
-        @include m.grid(2);
+   .dia{
+    text-transform: uppercase;
+    margin: 5rem 0;
+   }
+
+}
+
+.escenarios-contenedor{
+    @include m.tablet{
+        @include m.grid(2)
+    };
+    
+  
+
+    .bg-amarillo{
+        background-color: v.$amarillo;
+        li:nth-child(odd) {
+            background-color: darken(v.$amarillo, 15%);
+        }
+    }
+    
+    .bg-verde{
+        background-color: v.$verde;
+        li:nth-child(odd) {
+            background-color: darken(v.$verde, 10%);
+        }
+    }
+}
+
+.escenario{
+    padding-top: 2rem;
+
+    p{
+        color: v.$negro;
+
+        &::after{
+            content: '';
+            display: block;
+            height: 10rem;
+            width: 20rem;
+            margin: 2rem auto 0 auto;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+    
+    ul{
+        text-align: justify;
+        font-size: 1.5rem;
+    }
+}
+
+.edm .nombre-escenario::after{
+    background-image: url(../../../build/img/icono_edm.png);
+}
+
+.rock .nombre-escenario::after{
+    background-image: url(../../../build/img/icono_rock.png);
+}
+
+.calendario{
+    @include m.resetearLista;
+
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
     }
 }
 
