@@ -19,6 +19,8 @@ const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const avif = require("gulp-avif");
 
+// JavaScript
+const terser = require( 'gulp-terser-js');
 
 
 function css(done) {
@@ -78,8 +80,11 @@ function versionAvif( done){
 
 };
 
-function javaScript(done){
+function javascript(done){
     src("src/js/**/*.js")
+        .pipe(sourcemaps.init())
+        .pipe( terser() )
+        .pipe(sourcemaps.write())
         .pipe(dest("build/js"))
 
     done();
@@ -87,14 +92,15 @@ function javaScript(done){
 
 function dev(done) {
     watch("src/scss/**/*.scss", css);
-    watch("src/js/*.js", javaScript);
+    watch("src/js/*.js", javascript);
 
     done();
 };
 
 exports.css = css;
-exports.javaScript = javaScript;
+exports.js = javascript;
 exports.imagenes = imagenes ;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.dev = parallel( imagenes, versionWebp, versionAvif, javaScript, dev );
+exports.dev = parallel( imagenes, versionWebp, versionAvif, javascript, dev ) ;
+
